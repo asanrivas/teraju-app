@@ -37,10 +37,10 @@
 
   <div data-role="content">
     <div id="page_divider">Home</div>
-    <a href="#p1" id="baboutsabah" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <a href="#pbuyer" id="baboutsabah" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Buyer
     </a>
-    <a href="#p2" id="btravelidea" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <a href="#pseller" id="btravelidea" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Seller</a>
     <a href="#p3" id="bguide" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Latest Items
@@ -135,7 +135,7 @@
 		var users = new Parse.User();
 		users.set("username", $uname);
 		users.set("password", $pass);
-		user.set("email", $email);
+		users.set("email", $email);
 		 
 		// other fields can be set just like with Parse.Object
 		users.set("phone", $phone);
@@ -157,7 +157,31 @@
   </div><!-- /content -->
 </div>
 <!-- /PREG -->    
-       
+
+<!-- PBUYER -->
+<div data-role="page" id="pbuyer">
+	<div data-role="header" data-id="head">
+    <a data-role="button" data-rel="back">Back</a>
+		<h1>Kau Ada</h1>
+	</div><!-- /header -->
+
+  <div data-role="content">
+    <div id="page_divider">Buyer</div>
+    <a href="#pbuyer" id="bplace_wildlife" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Buyer
+    </a>
+    <a href="#pseller" id="btravelidea" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Seller</a>
+    <a href="#p3" id="bguide" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Latest Items
+    </a>
+    <a href="#p4" id="bmap" data-rel="dialog" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="pop">
+    Hot Items
+    </a>
+   
+  </div><!-- /content -->
+</div>
+<!-- /PBUYER -->       
         
     </body>
 </html>
