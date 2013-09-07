@@ -99,9 +99,13 @@
     <div data-role="fieldcontain" class="ui-hide-label" id="home_reg">
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username" value="" placeholder="Username"/><br/><br/>
-        <label for="username">Password:</label>
-		<input type="text" name="password" id="password" value="" placeholder="Password"/><br/><br/>
-        <button type="submit" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button>
+        <label for="password">Password:</label>
+		<input type="password" name="password" id="password" value="" placeholder="Password"/><br/><br/>
+        <label for="Email">Email:</label>
+		<input type="text" name="email" id="email" value="" placeholder="Email"/><br/><br/>
+        <label for="Phone">Phone:</label>
+		<input type="text" name="phone" id="phone" value="" placeholder="Phone"/><br/><br/>
+        <button type="submit" id="submit_reg" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button>
 	</div>
   
 <!-- PARSE SDK -->
@@ -118,6 +122,35 @@
         $(".error").show();
       }
     });
+	
+	$uname = $("#username").html();
+	$pass = $("#password").attr("value");
+	$email = $("#email").attr("value");
+	$phone = $("#phone").attr("value");
+	
+	$("#submit_reg").click(function () {
+  		alert($uname);
+		
+		var users = new Parse.User();
+		users.set("username", $uname);
+		users.set("password", $pass);
+		user.set("email", $email);
+		 
+		// other fields can be set just like with Parse.Object
+		users.set("phone", $phone);
+		 
+		users.signUp(null, {
+		  success: function(users) {
+			// Hooray! Let them use the app now.
+		  },
+		  error: function(users, error) {
+			// Show the error message somewhere and let the user try again.
+			alert("Error: " + error.code + " " + error.message);
+		  }
+		});
+	});
+	
+	
   </script>
 <!-- /PARSE SDK -->      
   </div><!-- /content -->
