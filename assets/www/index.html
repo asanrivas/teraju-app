@@ -131,19 +131,24 @@ $(document).bind('mobileinit',function(){
     </a>
     <br/>
     
-    <div id="page_divider">Latest Items</div><br/>
-    <ul data-role="listview">
+    
+    <div id="page_divider">Latest Wanted</div><br/>
     <div id="latest_item_list" data-role="controlgroup">
-    <div class="duplicater">
-    <a href="#" class="" data-role="button" data-icon="arrow-r" data-iconpos="right">
-    	<img src="images/90px/135.jpg" class="img_popular">
-        <h1 class="ititle">Test 1</h1>
-        <p class="idescription">Test 2</p>
-        <p class="itime">Test 3</p>
-    </a>
-    </div>
-    </div>
+    <ul data-role="listview" data-inset="true" data-scroll="true">
+        <div class="duplicater">
+        <li>
+        <a href="#" class="" data-role="button" data-icon="arrow-r" data-iconpos="right">
+            <img src="images/90px/135.jpg" class="img_popular">
+            <h1 class="ititle">Test 1</h1>
+            <p class="idescription">Test 2</p>
+            <p class="itime">Test 3</p>
+        </a>
+        </li>
+        </div>
+        
     </ul>
+    </div>
+    
     
  <!-- PARSE SDK -->
 <script type="text/javascript">
@@ -369,6 +374,97 @@ $(document).bind('mobileinit',function(){
 </div>
 <!-- /PFIND -->
 
+<!-- PSELLER -->
+<div data-role="page" id="pseller">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+        <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a> 
+	</div><!-- /header -->
+
+  <div data-role="content">
+    <center><b>Seller</b></center>
+    <hr/>
+    <a href="#plist_item" id="blist_item" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Item List
+    <span class="ui-btn-up-c ui-btn-corner-all custom-count-pos">86</span>
+    </a>
+    <a href="#padd_item" id="badd_item" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Add Item
+    <span class="ui-btn-up-c ui-btn-corner-all custom-count-pos">158</span>
+    </a>
+    <a href="#pnotification" id="bnotification" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Notifications
+    <span class="ui-btn-up-c ui-btn-corner-all custom-count-pos">12</span>
+    </a>
+    <a href="#pmsg_seller" id="bmsg_seller" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Messages
+    <span class="ui-btn-up-c ui-btn-corner-all custom-count-pos">87</span>
+    </a>
+    <a href="#psetting_seller" id="bsetting" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+     Notification Settings
+    </a>
+   
+  </div><!-- /content -->
+</div>
+<!-- /PSELLER --> 
+
+<!-- PSETTING_SELLER -->
+<div data-role="page" id="psetting_seller">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+        <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a> 
+	</div><!-- /header -->
+
+  <div data-role="content">
+    <center><b>Manage Notifications / Category</b></center>
+    <hr/>
+	
+    <fieldset data-role="controlgroup">
+            <input type="checkbox" name="scars" id="scars" data-iconpos="right" />
+            <label for="scars">Cars</label>
+            <input type="checkbox" name="smotor" id="smotor" data-iconpos="right" />
+            <label for="smotor">Motorcycles</label>
+			<input type="checkbox" name="sapartments" id="sapartments" data-iconpos="right" />
+            <label for="sapartments">Apartments</label>
+            <input type="checkbox" name="shouses" id="shouses" data-iconpos="right" />
+            <label for="shouses">Houses</label>
+            <input type="checkbox" name="sland" id="sland" data-iconpos="right" />
+            <label for="sland">Land</label>
+            <input type="checkbox" name="srooms" id="srooms" data-iconpos="right" />
+            <label for="srooms">Rooms</label>
+			<input type="checkbox" name="scomputer" id="scomputer" data-iconpos="right" />
+            <label for="scomputer">Computers &amp; Accessories</label>
+            <input type="checkbox" name="smobile_phone" id="smobile_phone" data-iconpos="right" />
+            <label for="smobile_phone">Mobile Phones &amp; Gadget</label>
+            <input type="checkbox" name="selec_other" id="selec_other" data-iconpos="right" />
+            <label for="selec_other">Others Electronics Devices</label>
+			<input type="checkbox" name="sfurniture" id="sfurniture" data-iconpos="right" />
+            <label for="sfurniture">Furnitures</label>
+            <input type="checkbox" name="swatches" id="swatches" data-iconpos="right" />
+            <label for="swatches">Watches &amp; Accessories</label>
+            <input type="checkbox" name="sclothes" id="sclothes" data-iconpos="right" />
+            <label for="sclothes">Clothes</label>
+            <input type="checkbox" name="sshoes" id="sshoes" data-iconpos="right" />
+            <label for="sshoes">Shoes</label>
+            <input type="checkbox" name="sbag" id="sbag" data-iconpos="right" />
+            <label for="sbag">Bag &amp; Wallets</label>
+            <input type="checkbox" name="skitchen" id="skitchen" data-iconpos="right" />
+            <label for="skitchen">Kitchen &amp; Appliences</label>
+			<input type="checkbox" name="ssports" id="ssports" data-iconpos="right" />
+            <label for="ssports">Sports &amp; Outdoors</label>
+            <input type="checkbox" name="shobbies" id="shobbies" data-iconpos="right" />
+            <label for="shobbies">Hobbies &amp; Collectibles</label>          
+            <input type="checkbox" name="smusics" id="smusics" data-iconpos="right" />
+            <label for="smusics">Musics / Movies / Books</label>
+    </fieldset>
+    <button type="submit" id="save_item" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Save</button>
+
+       
+  </div><!-- /content -->
+</div>
+<!-- /PSETTING_SELLER --> 
 
     </body>
 </html>
