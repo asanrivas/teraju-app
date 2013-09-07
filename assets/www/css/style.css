@@ -571,6 +571,13 @@
 	padding-top:8px;
 	margin-left:-2%;
 }
+a.ui-li-has-count span span.ui-btn-text{ padding-right:0; position:static; }
+.custom-count-pos{
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0.2em 0.5em;
+    float: right;
+}
 
 
 ///////////////////////ICONSWEETS//////////////////////////////////////////
