@@ -36,7 +36,7 @@
 	</div><!-- /header -->
 
   <div data-role="content">
-    <div id="page_divider">Sabah, the Malaysian Borneo</div>
+    <div id="page_divider">Home</div>
     <a href="#p1" id="baboutsabah" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Menu 1
     </a>
@@ -49,20 +49,20 @@
     Menu 4
     </a>
     
-  <div style="display:none" class="error">
-      Looks like there was a problem saving the test object. Make sure you've set your application ID and javascript key correctly in the call to <code>Parse.initialize</code> in this file.
-    </div>
-
-    <div style="display:none" class="success">
-      <p>We've also just created your first object using the following code:</p>
-      
-        <code>
-          var TestObject = Parse.Object.extend("TestObject");<br/>
-          var testObject = new TestObject();<br/>
-          testObject.save({foo: "bar"});
-        </code>
-    </div>
-  
+    <br/><br/>
+    <div id="page_divider">Login</div>
+    <hr/>
+    <div data-role="fieldcontain" class="ui-hide-label" id="home_login">
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username" value="" placeholder="Username"/><br/><br/>
+        <label for="username">Password:</label>
+		<input type="text" name="password" id="password" value="" placeholder="Password"/><br/><br/>
+        <button type="submit" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button>
+	</div>
+    <center>- OR -</center>
+    <a href="#preg" data-theme="a" data-role="button" data-transition="slide">
+    Register
+    </a>
   
 <!-- PARSE SDK -->
 <script type="text/javascript">
@@ -80,11 +80,48 @@
     });
   </script>
 <!-- /PARSE SDK -->      
-    
   </div><!-- /content -->
-
 </div>
-<!-- /PHOME -->    
+<!-- /PHOME -->
+
+<!-- PREG -->
+<div data-role="page" id="preg" data-add-back-btn="true" data-back-btn-text="Back">
+	<div data-role="header" data-id="head">
+    <!--a data-role="back" data-direction="reverse" data-mini="true">Back</a-->
+		<h1>Kau Ada</h1>
+	</div><!-- /header -->
+
+  <div data-role="content">
+
+    <div id="page_divider">Register</div>
+    <hr/>
+    <div data-role="fieldcontain" class="ui-hide-label" id="home_reg">
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username" value="" placeholder="Username"/><br/><br/>
+        <label for="username">Password:</label>
+		<input type="text" name="password" id="password" value="" placeholder="Password"/><br/><br/>
+        <button type="submit" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button>
+	</div>
+  
+<!-- PARSE SDK -->
+<script type="text/javascript">
+    Parse.initialize("l3u5f6gZsv89a09Ie6ZjXqxgz4BNcoH4llwfTkfB", "3yzEpJ2G39tbg1xZPgVxOpPGh36dLPQfG6f1tukP");
+    
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+  </script>
+<!-- /PARSE SDK -->      
+  </div><!-- /content -->
+</div>
+<!-- /PREG -->    
        
         
     </body>
