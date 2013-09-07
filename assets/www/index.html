@@ -105,12 +105,18 @@ $(document).bind('mobileinit',function(){
 <div data-role="page" id="phome">
 	<div data-role="header" data-id="head">
 		<h1>Kau Ada</h1>
-        <a href="#search" id="hsearch" class="ui-btn-right" data-theme="f" data-iconpos="notext">Search</a>  
+        <a href="#plogin" id="hlogin" class="ui-btn-right" data-theme="f" data-iconpos="notext" data-transition="flip">Login</a>  
 	</div><!-- /header -->
 
   <div data-role="content">
-    <center><b>HOME</b></center>
-    <hr/>
+    <div data-role="fieldcontain" class="ui-hide-label"> 
+    <label for="search-basic">Search Input:</label>
+	<input type="search" name="search" id="search-basic" value="" placeholder="Search.." />
+    </div>
+    
+	<a href="#pfind" id="bsearch2" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Submit Item
+    </a>
     <a href="#pbuyer" id="bplace_wildlife" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Buyer
     </a>
@@ -122,9 +128,60 @@ $(document).bind('mobileinit',function(){
     <a href="#p4" id="bmap" data-rel="dialog" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="pop">
     Hot Items
     </a>
+    <br/>
     
-    <br/><br/>
-    <div data-role="fieldcontain" class="ui-hide-label" id="home_login">
+    <div id="page_divider">Latest Items</div><br/>
+    <ul data-role="listview">
+    <div data-role="controlgroup">
+    <a href="#" id="home_popular" data-role="button" data-icon="arrow-r" data-iconpos="right">
+    	<img src="images/90px/135.jpg" class="img_popular">
+        <h1>Sipadan Island</h1>
+        <p>The only oceanic island in Malaysia, Sipadan boasts thousands of fish and hundreds of coral species. A haven for divers!</p>
+    </a>
+    <a href="#" id="home_popular" data-role="button" data-icon="arrow-r" data-iconpos="right">
+    	<img src="images/90px/28.jpg" class="img_popular">
+    	<h1>Kinabatangan River</h1>
+		<p>Take a cruise along the Kinabatangan River and get a chance to spot proboscis monkeys, long–tailed macaques, and Bornean pygmy elephants.</p>
+    </a>
+    <a href="#" id="home_popular" data-role="button" data-icon="arrow-r" data-iconpos="right">
+    	<img src="images/90px/76.jpg" class="img_popular">
+    	<h1>The Tip of Borneo - Tanjung Simpang Mengayau</h1>
+		<p>The South China Sea and the Sulu Sea converge here. It offers a breathtaking view – perfect spot to watch sunset!</p>
+    </a>
+    </div>
+    </ul>
+    
+ <!-- PARSE SDK -->
+<script type="text/javascript">
+    Parse.initialize("l3u5f6gZsv89a09Ie6ZjXqxgz4BNcoH4llwfTkfB", "3yzEpJ2G39tbg1xZPgVxOpPGh36dLPQfG6f1tukP");
+    
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
+  </script>
+<!-- /PARSE SDK -->
+   
+  </div><!-- /content -->
+</div>
+<!-- /PHOME -->
+
+<!-- PLOGIN -->
+<div data-role="page" id="plogin">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+    <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a>    
+	</div><!-- /header -->
+
+  <div data-role="content">
+  <div data-role="fieldcontain" class="ui-hide-label" id="home_login">
     <div id="page_divider">Login</div>
     <hr/>
 		<label for="username">Username:</label>
@@ -155,10 +212,10 @@ $(document).bind('mobileinit',function(){
       }
     });
   </script>
-<!-- /PARSE SDK -->      
+<!-- /PARSE SDK -->  
   </div><!-- /content -->
 </div>
-<!-- /PHOME -->
+<!-- /PLOGIN -->
 
 <!-- PREG -->
 <div data-role="page" id="preg">
