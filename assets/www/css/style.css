@@ -48,6 +48,18 @@
 #hhome:hover {
 	background-color:#778547;
 }
+#hlogin {
+	height:32px;
+	width:32px;
+	margin-top:-2px;
+	background: url(../jquery-mobile/iconsweets/14-group.png) no-repeat;
+	background-size:32px 32px;
+	border-color:#778547;
+}
+#hlogin:hover {
+	background-color:#778547;
+}
+
 #baboutsabah {
 	background: url(../jquery-mobile/iconsweets/136-pacmanghost.png) 50% 50% no-repeat; /*9-info.png*/
 	background-size:32px 32px;
