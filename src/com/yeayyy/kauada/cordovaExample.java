@@ -17,7 +17,7 @@
        under the License.
  */
 
-package org.apache.cordova.example;
+package com.yeayyy.kauada;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
