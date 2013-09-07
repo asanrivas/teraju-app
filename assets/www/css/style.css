@@ -12,11 +12,11 @@
 	padding-top:4px;
 }
 #hsearch {
-	height:58px;
-	width:58px;
+	height:32px;
+	width:32px;
 	margin-top:-2px;
 	background:url(../jquery-mobile/iconsweets/108-search.png) no-repeat;
-	background-size:58px 58px;
+	background-size:32px 32px;
 	border-color:#778547;
 }
 #hsearch:hover {
@@ -27,18 +27,29 @@
 	border-color:#778547;
 }
 #hback {
-	height:58px;
-	width:58px;
+	height:32px;
+	width:32px;
 	margin-top:-2px;
 	background: url(../jquery-mobile/iconsweets/65-left.png) no-repeat;
-	background-size:58px 58px;
+	background-size:32px 32px;
 	border-color:#778547;
 }
 #hback:hover {
 	background-color:#778547;
 }
+#hhome {
+	height:32px;
+	width:32px;
+	margin-top:-2px;
+	background: url(../jquery-mobile/iconsweets/1-home.png) no-repeat;
+	background-size:32px 32px;
+	border-color:#778547;
+}
+#hhome:hover {
+	background-color:#778547;
+}
 #baboutsabah {
-	background: url(../jquery-mobile/iconsweets/9-info.png) 50% 50% no-repeat;
+	background: url(../jquery-mobile/iconsweets/136-pacmanghost.png) 50% 50% no-repeat; /*9-info.png*/
 	background-size:32px 32px;
 	background-position:5px 50%;
 	margin-left:2%;
@@ -411,8 +422,31 @@
 	text-align:left;
 	padding-left:21px;
 }
+#bsearch2 {
+	background: url(../jquery-mobile/iconsweets/108-search.png) 50% 50% no-repeat;
+	background-size:32px 32px;
+	background-position:6px 50%;
+	margin-left:2%;
+	margin-right:2%;
+	width:auto;
+	height:auto;
+	text-align:left;
+	padding-left:21px;
+}
 
-#baboutsabah:hover, #btravelidea:hover, #bguide:hover, #bmap:hover, #bdestination:hover, #bhotspot:hover, #bplacedistrict:hover, #bplacetype:hover, #bplace_sport:hover, #bplace_city:hover, #bplace_cultural:hover, #bplace_golf:hover, #bplace_heritage:hover, #bplace_island:hover, #bplace_relax:hover, #bplace_nature:hover, #bplace_park:hover, #bplace_tamu:hover, #bplace_spa:hover, #bplace_wildlife:hover, #bplace_district:hover, #baccomodation:hover, #bhomestay:hover, #bhoteldistrict:hover, #bhoteltype:hover, #bhotel_district:hover, #bhotel_condo:hover, #bhotel_beach:hover, #bhotel_bed:hover, #bhotel_budget:hover, #bhotel_business:hover, #bhotel_island:hover, #bhotel_lodges:hover, #bhomestay_loc:hover {
+#bitemfound {
+	background: url(../jquery-mobile/iconsweets/126-dropbox.png) 50% 50% no-repeat;
+	background-size:32px 32px;
+	background-position:6px 50%;
+	margin-left:2%;
+	margin-right:2%;
+	width:auto;
+	height:auto;
+	text-align:left;
+	padding-left:21px;
+}
+
+#baboutsabah:hover, #btravelidea:hover, #bguide:hover, #bmap:hover, #bdestination:hover, #bhotspot:hover, #bplacedistrict:hover, #bplacetype:hover, #bplace_sport:hover, #bplace_city:hover, #bplace_cultural:hover, #bplace_golf:hover, #bplace_heritage:hover, #bplace_island:hover, #bplace_relax:hover, #bplace_nature:hover, #bplace_park:hover, #bplace_tamu:hover, #bplace_spa:hover, #bplace_wildlife:hover, #bplace_district:hover, #baccomodation:hover, #bhomestay:hover, #bhoteldistrict:hover, #bhoteltype:hover, #bhotel_district:hover, #bhotel_condo:hover, #bhotel_beach:hover, #bhotel_bed:hover, #bhotel_budget:hover, #bhotel_business:hover, #bhotel_island:hover, #bhotel_lodges:hover, #bhomestay_loc:hover, #bsearch2:hover, #bitemfound:hover {
 	background-color:#E3EDBB;
 }
 #dmap {
