@@ -33,14 +33,16 @@
 <div data-role="page" id="phome">
 	<div data-role="header" data-id="head">
 		<h1>Kau Ada</h1>
+        <a href="#search" id="hsearch" class="ui-btn-right" data-theme="f" data-iconpos="notext">Search</a>  
 	</div><!-- /header -->
 
   <div data-role="content">
-    <div id="page_divider">Home</div>
-    <a href="#pbuyer" id="baboutsabah" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <center><b>HOME</b></center>
+    <hr/>
+    <a href="#pbuyer" id="bplace_wildlife" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Buyer
     </a>
-    <a href="#pseller" id="btravelidea" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <a href="#pseller" id="baboutsabah" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Seller</a>
     <a href="#p3" id="bguide" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Latest Items
@@ -87,8 +89,9 @@
 <!-- PREG -->
 <div data-role="page" id="preg">
 	<div data-role="header" data-id="head">
-    <a data-role="button" data-rel="back">Back</a>
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
 		<h1>Kau Ada</h1>
+    <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a>    
 	</div><!-- /header -->
 
  
@@ -124,12 +127,12 @@
       }
     });
 	
-	$uname = $("#username").html();
-	$pass = $("#password").attr("value");
-	$email = $("#email").attr("value");
-	$phone = $("#phone").attr("value");
-	
 	$("#submit_reg").click(function () {
+		$uname = $("#username").attr("value");
+		$pass = $("#password").attr("value");
+		$email = $("#email").attr("value");
+		$phone = $("#phone").attr("value");
+	
   		alert($uname);
 		
 		var users = new Parse.User();
@@ -151,7 +154,6 @@
 		});
 	});
 	
-	
   </script>
 <!-- /PARSE SDK -->      
   </div><!-- /content -->
@@ -161,27 +163,58 @@
 <!-- PBUYER -->
 <div data-role="page" id="pbuyer">
 	<div data-role="header" data-id="head">
-    <a data-role="button" data-rel="back">Back</a>
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
 		<h1>Kau Ada</h1>
+        <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a> 
 	</div><!-- /header -->
 
   <div data-role="content">
-    <div id="page_divider">Buyer</div>
-    <a href="#pbuyer" id="bplace_wildlife" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
-    Buyer
+    <center><b>Buyer</b></center>
+    <hr/>
+    <a href="#pfind" id="bsearch2" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Find Item
     </a>
-    <a href="#pseller" id="btravelidea" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
-    Seller</a>
-    <a href="#p3" id="bguide" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
-    Latest Items
+    <a href="#pfound" id="bitemfound" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Item Lists
     </a>
-    <a href="#p4" id="bmap" data-rel="dialog" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="pop">
-    Hot Items
+    <a href="#pplacedistrict" id="bplacedistrict" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Browse by District
+    </a>
+    <a href="#pplacetype" id="bplacetype" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Browse by Type
     </a>
    
   </div><!-- /content -->
 </div>
-<!-- /PBUYER -->       
+<!-- /PBUYER -->  
+
+<!-- PFIND -->
+<div data-role="page" id="pfind">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+        <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a> 
+	</div><!-- /header -->
+
+  <div data-role="content">
+    <center><b>Find Item</b></center>
+    <hr/>
+    <a href="#pfind" id="bsearch2" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Find Item
+    </a>
+    <a href="#pfound" id="bitemfound" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Item Lists
+    </a>
+    <a href="#pplacedistrict" id="bplacedistrict" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Browse by District
+    </a>
+    <a href="#pplacetype" id="bplacetype" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    Browse by Type
+    </a>
+   
+  </div><!-- /content -->
+</div>
+<!-- /PFIND -->       
         
     </body>
 </html>
