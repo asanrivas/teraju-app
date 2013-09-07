@@ -48,29 +48,73 @@ var app = {
     }
 };
 $(function(){
+	var ItemList = Parse.Object.extend("ItemList");
+	var query = new Parse.Query(ItemList);
+	query.limit(10);
+	query.descending("updatedAt");
+	query.find({
+	  success: function(results) {
+	    //alert("Successfully retrieved " + results.length + " scores.");
+	    // Do something with the returned Parse.Object values
+	    for (var i = 0; i < results.length; i++) { 
+	      var object = results[i];
+	     	// alert(object.id + ' - ' + object.get('playerName'));
+	     	var item_name = object.get('item_name');
+	     	var desc = object.get('desc');
+         var item = $(".duplicater").clone().attr("class","latest_item").appendTo("#latest_item_list");
+         item.find(".ititle").html(item_name);
+         item.find(".idescription").html(desc);
+         
+         //item.children(".itittle").html();
+	    }
+	    $(".duplicater").hide();
+	  },
+	  error: function(error) {
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+	
 	$('#submit_item').click(function() {
 		var ItemList = Parse.Object.extend("ItemList");
 		var itemList = new ItemList();
-
+		var currentUser = Parse.User.current();
+		
 		itemList.set("category", $('#select_category').val());
+		itemList.set("item_name", $('#item_name').val());
 		itemList.set("desc", $('#desc').val());
 		itemList.set("brand", $('#brand').val());
 		itemList.set("model", $('#model').val());
-		itemList.set("model", $('#select_conditions').val());
-		itemList.set("model", $('#year').val());
-		itemList.set("model", $('#budget').val());
-		itemList.set("model", $('#select_delivery').val());
-		itemList.set("model", $('#select_state').val());
+		itemList.set("conditions", $('#select_conditions').val());
+		itemList.set("year", $('#year').val());
+		itemList.set("budget", $('#budget').val());
+		itemList.set("select_delivery", $('#select_delivery').val());
+		itemList.set("state", $('#select_state').val());
+		itemList.set("user_id", currentUser.get('username'));
 
 		itemList.save(null, {
 		  success: function(itemList) {
 		    // Execute any logic that should take place after the object is saved.
-		    alert('New object created with objectId: ' + itemList.id);
+		    //alert('New object created with objectId: ' + itemList.id);
+			location.href = "index.html?msg=success";
 		  },
 		  error: function(itemList, error) {
 		    // Execute any logic that should take place if the save fails.
 		    // error is a Parse.Error with an error code and description.
 		    alert('Failed to create new object, with error code: ' + error.description);
+		  }
+		});
+		Parse.Push.send({
+		  channels: itemList.get("category"),
+		  data: {
+		    alert: currentUser.get('username')+" is looking for "+itemList.get("item_name")+"."
+		  }
+		}, {
+		  success: function() {
+		    // Push was successful
+			
+		  },
+		  error: function(error) {
+		    // Handle error
 		  }
 		});
 	});

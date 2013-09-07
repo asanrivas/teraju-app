@@ -117,12 +117,12 @@ $(document).bind('mobileinit',function(){
 	<a href="#pfind" id="bsearch2" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Submit Item
     </a>
-    <a href="#pbuyer" id="bplace_wildlife" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <a href="#pbuyer" id="button_buyer" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Buyer
     </a>
-    <a href="#pseller" id="baboutsabah" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <a href="#pseller" id="button_seller" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Seller</a>
-    <a href="#p3" id="bguide" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
+    <a href="#p3" id="button_latest" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="slide">
     Latest Items
     </a>
     <a href="#p4" id="bmap" data-rel="dialog" data-theme="f" data-role="button" data-iconpos="right" data-icon="arrow-r" data-transition="pop">
@@ -132,22 +132,14 @@ $(document).bind('mobileinit',function(){
     
     <div id="page_divider">Latest Items</div><br/>
     <ul data-role="listview">
-    <div data-role="controlgroup">
-    <a href="#" id="home_popular" data-role="button" data-icon="arrow-r" data-iconpos="right">
+    <div id="latest_item_list" data-role="controlgroup">
+    <div class="duplicater">
+    <a href="#" class="" data-role="button" data-icon="arrow-r" data-iconpos="right">
     	<img src="images/90px/135.jpg" class="img_popular">
-        <h1>Sipadan Island</h1>
-        <p>The only oceanic island in Malaysia, Sipadan boasts thousands of fish and hundreds of coral species. A haven for divers!</p>
+        <h1 class="ititle">Test 1</h1>
+        <p class="idescription">Test 2</p>
     </a>
-    <a href="#" id="home_popular" data-role="button" data-icon="arrow-r" data-iconpos="right">
-    	<img src="images/90px/28.jpg" class="img_popular">
-    	<h1>Kinabatangan River</h1>
-		<p>Take a cruise along the Kinabatangan River and get a chance to spot proboscis monkeys, long–tailed macaques, and Bornean pygmy elephants.</p>
-    </a>
-    <a href="#" id="home_popular" data-role="button" data-icon="arrow-r" data-iconpos="right">
-    	<img src="images/90px/76.jpg" class="img_popular">
-    	<h1>The Tip of Borneo - Tanjung Simpang Mengayau</h1>
-		<p>The South China Sea and the Sulu Sea converge here. It offers a breathtaking view – perfect spot to watch sunset!</p>
-    </a>
+    </div>
     </div>
     </ul>
     
