@@ -47,4 +47,32 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+$(function(){
+	$('#submit_item').click(function() {
+		var ItemList = Parse.Object.extend("ItemList");
+		var itemList = new ItemList();
 
+		itemList.set("category", $('#select_category').val());
+		itemList.set("desc", $('#desc').val());
+		itemList.set("brand", $('#brand').val());
+		itemList.set("model", $('#model').val());
+		itemList.set("model", $('#select_conditions').val());
+		itemList.set("model", $('#year').val());
+		itemList.set("model", $('#budget').val());
+		itemList.set("model", $('#select_delivery').val());
+		itemList.set("model", $('#select_state').val());
+
+		itemList.save(null, {
+		  success: function(itemList) {
+		    // Execute any logic that should take place after the object is saved.
+		    alert('New object created with objectId: ' + itemList.id);
+		  },
+		  error: function(itemList, error) {
+		    // Execute any logic that should take place if the save fails.
+		    // error is a Parse.Error with an error code and description.
+		    alert('Failed to create new object, with error code: ' + error.description);
+		  }
+		});
+	});
+	
+});
