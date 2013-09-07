@@ -61,9 +61,12 @@ $(function(){
 	     	// alert(object.id + ' - ' + object.get('playerName'));
 	     	var item_name = object.get('item_name');
 	     	var desc = object.get('desc');
+	     	//alert(object.updatedAt);
+	     	var time = moment(object.updatedAt).fromNow();
          var item = $(".duplicater").clone().attr("class","latest_item").appendTo("#latest_item_list");
          item.find(".ititle").html(item_name);
          item.find(".idescription").html(desc);
+         item.find(".itime").html(time);
          
          //item.children(".itittle").html();
 	    }
