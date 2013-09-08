@@ -137,7 +137,7 @@ $(document).bind('mobileinit',function(){
     <ul data-role="listview" data-inset="true" data-scroll="true">
         <div class="duplicater">
         <li>
-        <a href="#" class="" data-role="button" data-icon="arrow-r" data-iconpos="right">
+        <a href="#pitem_page" data-rel="dialog" data-transition="pop" class="" data-role="button" data-icon="arrow-r" data-iconpos="right">
             <img src="images/90px/135.jpg" class="img_popular">
             <h1 class="ititle">Test 1</h1>
             <p class="idescription">Test 2</p>
@@ -170,6 +170,26 @@ $(document).bind('mobileinit',function(){
   </div><!-- /content -->
 </div>
 <!-- /PHOME -->
+
+
+<!-- PITEM_PAGE -->
+<div data-role="page" id="pitem_page">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+    <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a>    
+	</div><!-- /header -->
+
+ 
+  <div data-role="content">
+
+    <div id="page_divider">Items Page</div>
+    <hr/>
+    
+  </div><!-- /content -->
+</div>
+<!-- /PITEM_PAGE --> 
+
 
 <!-- PLOGIN -->
 <div data-role="page" id="plogin">
@@ -466,5 +486,160 @@ $(document).bind('mobileinit',function(){
 </div>
 <!-- /PSETTING_SELLER --> 
 
+<!-- PADD_ITEM -->
+<div data-role="page" id="padd_item">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+        <a href="#phome" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a> 
+	</div><!-- /header -->
+  <div data-role="content">
+    <center><b>Add Item</b></center>
+  <hr/>
+	    
+    <div data-role="fieldcontain" class="ui-hide-label" id="add_item">
+    <button id="chooseFile">Choose file</button>
+	<div class="hiddenfile">
+	<input type="file"  data-clear-btn="false" name="image" accept="image/*" capture>
+	</div>
+	<div id="preview">
+	</div>
+	<ul id="info" data-role="listview" data-inset="true">
+	</ul>
+
+    
+    <label for="select_category" class="select">Categories:</label>
+	<select data-native-menu="false" name="select_category" id="select_category">
+		<option data-placeholder="true">Categories</option>
+        <optgroup label="Vehicles">
+            <option value="cars">Cars</option>
+            <option value="motorcycles">Motorcycles</option>
+        </optgroup>
+        <optgroup label="Properties">
+			<option value="apartments">Apartments</option>
+            <option value="houses">Houses</option>
+            <option value="land">Land</option>
+            <option value="rooms">Rooms</option>
+        </optgroup>
+        <optgroup label="Electronics">
+			<option value="computer">Computers &amp; Accessories</option>
+            <option value="mobile_phone">Mobile Phones &amp; Gadget</option>
+            <option value="elec_other">Others</option>
+        </optgroup>
+        <optgroup label="Home &amp; Personal Items">
+			<option value="furniture">Furnitures</option>
+            <option value="watches">Watches &amp; Accessories</option>
+            <option value="clothes">Clothes</option>
+            <option value="shoes">Shoes</option>
+            <option value="bag">Bag &amp; Wallets</option>
+            <option value="kitchen">Kitchen &amp; Appliences</option>
+        </optgroup>
+        <optgroup label="Sports &amp; Hobbies">
+			<option value="sports">Sports &amp; Outdoors</option>
+            <option value="hobbies">Hobbies &amp; Collectibles</option>
+            <option value="musics">Musics/Movies/Books</option>
+        </optgroup>
+	</select><br/><br/>
+
+		<label for="item_name">Name:</label>
+		<input type="text" name="item_name" id="item_name" value="" placeholder="Name"/><br/><br/>
+        <label for="desc">Description:</label>
+		<textarea type="text" name="desc" id="desc" value="" placeholder="Description"></textarea><br/><br/>
+        <label for="brand">Brand:</label>
+		<input type="text" name="brand" id="brand" value="" placeholder="Brand"/><br/><br/>
+        <label for="model">Model:</label>
+		<input type="text" name="model" id="model" value="" placeholder="Model"/><br/><br/>
+        
+     <label for="select_conditions" class="select">Conditions:</label>
+	 <select data-native-menu="false" name="select_conditions" id="select_conditions">
+		<option data-placeholder="true">Conditions</option>
+        <option value="new">New</option>
+        <option value="used">Used</option>
+     </select><br/><br/>
+        
+        <label for="year">Year:</label>
+		<input type="text" name="year" id="year" value="" placeholder="Year"/><br/><br/>
+        <label for="price">Price:</label>
+		<input type="text" name="price" id="price" value="" placeholder="Price"/><br/><br/>
+        
+      <label for="select_delivery" class="select">Delivery Methods:</label>
+	 <select data-native-menu="false" name="select_delivery" id="select_delivery">
+		<option data-placeholder="true">Delivery Methods</option>
+        <option value="cod">COD</option>
+        <option value="post">Post</option>
+     </select><br/><br/>
+     
+     <label for="select_state" class="select">State:</label>
+	 <select data-native-menu="false" name="select_state" id="select_state">
+		<option data-placeholder="true">State</option>
+        <option value="johore">Johore</option>
+        <option value="kedah">Kedah</option>
+        <option value="kelantan">Kelantan</option>
+        <option value="kl">Kuala Lumpur</option>
+        <option value="malacca">Malacca</option>
+        <option value="n9">Negeri Sembilan</option>
+        <option value="pahang">Pahang</option>
+        <option value="penang">Penang</option>
+        <option value="perak">Perak</option>
+        <option value="perlis">Perlis</option>
+        <option value="selangor">Selangor</option>
+        <option value="sabah">Sabah</option>
+        <option value="sarawak">Sarawak</option>
+        <option value="terengganu">Terengganu</option>
+     </select>  <br/><br/>
+
+        <button type="submit" id="submit_item1" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button>
+    </div>
+            
+  </div><!-- /content -->
+</div>
+<!-- /PADD_ITEM -->
+
+    <script>
+    $('#padd_item').on('pageinit', function(){
+		$("#chooseFile").click(function(e){
+			e.preventDefault();
+			$("input[type=file]").trigger("click");
+		});
+		$("input[type=file]").change(function(){
+			var file = $("input[type=file]")[0].files[0];            
+			$("#preview").empty();
+			displayAsImage3(file, "preview");
+			
+			$info = $("#info");
+			$info.empty();
+			if (file && file.name) {
+				$info.append("<li>name:<span>" + file.name + "</span></li>");
+			}
+			if (file && file.type) {
+				$info.append("<li>size:<span>" + file.type + " bytes</span></li>");
+			}
+			if (file && file.size) {
+				$info.append("<li>size:<span>" + file.size + " bytes</span></li>");
+			}
+			if (file && file.lastModifiedDate) {
+				$info.append("<li>lastModifiedDate:<span>" + file.lastModifiedDate + " bytes</span></li>");
+			}
+			$info.listview("refresh");
+		});
+    });
+
+    function displayAsImage3(file, containerid) {
+		if (typeof FileReader !== "undefined") {
+			var container = document.getElementById(containerid),
+			    img = document.createElement("img"),
+			    reader;
+			container.appendChild(img);
+			reader = new FileReader();
+			reader.onload = (function (theImg) {
+				return function (evt) {
+					theImg.src = evt.target.result;
+				};
+			}(img));
+			reader.readAsDataURL(file);
+		}
+	}
+	
+    </script>
     </body>
 </html>
