@@ -107,7 +107,7 @@ $(function(){
 		  }
 		});
 		Parse.Push.send({
-		  channels: itemList.get("category"),
+		  channels: [ "cars", "motorcycles", "apartments", "houses"],
 		  data: {
 		    alert: currentUser.get('username')+" is looking for "+itemList.get("item_name")+"."
 		  }
@@ -120,6 +120,50 @@ $(function(){
 		    // Handle error
 		  }
 		});
+	});
+	$('#submit_item1').click(function() {
+	   
+	   var fileUploadControl = $("#profilePhotoFileUpload")[0];
+      if (fileUploadControl.files.length > 0) {
+        var file = fileUploadControl.files[0];
+        var name = "photo.jpg";
+
+        var parseFile = new Parse.File(name, file);
+      }
+	   
+	   parseFile.save().then(function() {
+         var ItemList = Parse.Object.extend("ItemList");
+   		var itemList = new ItemList();
+   		var currentUser = Parse.User.current();
+
+   		itemList.set("category", $('#select_category1').val());
+   		itemList.set("item_name", $('#item_name1').val());
+   		itemList.set("desc", $('#desc1').val());
+   		itemList.set("brand", $('#brand1').val());
+   		itemList.set("model", $('#model1').val());
+   		itemList.set("conditions", $('#select_conditions1').val());
+   		itemList.set("year", $('#year1').val());
+   		itemList.set("budget", $('#budget1').val());
+   		itemList.set("select_delivery", $('#select_delivery1').val());
+   		itemList.set("state", $('#select_state1').val());
+   		itemList.set("user_id", currentUser.get('username'));
+
+   		itemList.save(null, {
+   		  success: function(itemList) {
+   		    // Execute any logic that should take place after the object is saved.
+   		    //alert('New object created with objectId: ' + itemList.id);
+   			location.href = "index.html?msg=success";
+   		  },
+   		  error: function(itemList, error) {
+   		    // Execute any logic that should take place if the save fails.
+   		    // error is a Parse.Error with an error code and description.
+   		    alert('Failed to create new object, with error code: ' + error.description);
+   		  }
+   		});
+      }, function(error) {
+        // The file either could not be read, or could not be saved to Parse.
+      });
+	
 	});
 	
 });

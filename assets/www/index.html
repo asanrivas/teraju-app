@@ -37,10 +37,13 @@ $(function() {
    var currentUser = Parse.User.current();
 	if (currentUser) {
     	// do stuff with the user
-    	$("#hlogin").hide();
-		$("#hlogout").show();
+    	$("#home_login").hide();
+    	$("#user_area").show();
+    	$('#userinfo').html("Current user: "+currentUser.get("username"));
 	} else {
     	// show the signup or login page
+    	$("#home_login").show();
+    	$("#user_area").hide();
 	}
 
 
@@ -72,8 +75,8 @@ $(function() {
 		Parse.User.logIn($("#username").val(), $("#password").val(), {
   			success: function(user) {
     		// Do stuff after successful login.
-    		//location.reload();
-			location.href="index.php";
+    		location.reload();
+			//location.href="index.php";
   		},
   		error: function(user, error) {
     	// The login failed. Check error to see why.
@@ -83,7 +86,8 @@ $(function() {
 	$("#logout").click(function() {
 		Parse.User.logOut();
 		var currentUser = Parse.User.current();  // this will now be null
-		location.href="index.php";
+		//location.href="index.php";
+		location.reload();
 	});
 	
 });
@@ -112,11 +116,8 @@ $(document).bind('mobileinit',function(){
 <!-- PHOME -->
 <div data-role="page" id="phome">
 	<div data-role="header" data-id="head">
-		<h1>Kau Ada</h1>
-        <a href="#plogin" id="hlogin" class="ui-btn-right" data-theme="f" data-iconpos="notext" data-transition="flip">Login</a>
-        <a href="#plogout" id="hlogout" class="ui-btn-right" data-theme="f" data-iconpos="notext" data-transition="flip">Logout</a>  
-		<div align="center"><img src="images/kauadabar.png"></div>
-        <a href="#plogin" id="hlogin" class="ui-btn-right" data-theme="f" data-iconpos="notext" data-transition="flip">Login</a>  
+		<img src="images/kauadabar.png">
+        <a href="#plogin" class="ui-btn-right" data-theme="f" data-iconpos="notext" data-transition="flip"  id="hlogin">Login</a>
 	</div><!-- /header -->
 
   <div data-role="content">
@@ -224,24 +225,12 @@ $(document).bind('mobileinit',function(){
     </a>
     </div>
     <div id="user_area">
+       <label id="userinfo"></label>
+       <a href="#" data-theme="a" data-role="button" id="logout" data-transition="slide">
+        Log out app
+        </a>
     </div>
   
-<!-- PARSE SDK -->
-<script type="text/javascript">
-    Parse.initialize("l3u5f6gZsv89a09Ie6ZjXqxgz4BNcoH4llwfTkfB", "3yzEpJ2G39tbg1xZPgVxOpPGh36dLPQfG6f1tukP");
-    
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-      testObject.save({foo: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
-  </script>
-<!-- /PARSE SDK -->  
   </div><!-- /content -->
 </div>
 <!-- /PLOGIN -->
