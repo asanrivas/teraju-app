@@ -47,6 +47,9 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+
+
 $(function(){
 	var ItemList = Parse.Object.extend("ItemList");
 	var query = new Parse.Query(ItemList);
@@ -67,6 +70,7 @@ $(function(){
          item.find(".ititle").html(item_name);
          item.find(".idescription").html(desc);
          item.find(".itime").html(time);
+         item.find("a").attr("href", "item.html?itemid="+object.id)
          
          //item.children(".itittle").html();
 	    }
@@ -146,6 +150,7 @@ $(function(){
    		itemList.set("budget", $('#budget1').val());
    		itemList.set("select_delivery", $('#select_delivery1').val());
    		itemList.set("state", $('#select_state1').val());
+   		itemList.set("photo", file);
    		itemList.set("user_id", currentUser.get('username'));
 
    		itemList.save(null, {

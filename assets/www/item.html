@@ -18,6 +18,32 @@
         <script type="text/javascript" src="js/parse-1.2.10.js"></script>        
         
         <script type="text/javascript">
+        var QueryString = function () {
+           Parse.initialize("l3u5f6gZsv89a09Ie6ZjXqxgz4BNcoH4llwfTkfB", "3yzEpJ2G39tbg1xZPgVxOpPGh36dLPQfG6f1tukP");
+        	
+          // This function is anonymous, is executed immediately and 
+          // the return value is assigned to QueryString!
+          var query_string = {};
+          var query = window.location.search.substring(1);
+          var vars = query.split("&");
+          for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            	// If first entry with this name
+            if (typeof query_string[pair[0]] === "undefined") {
+              query_string[pair[0]] = pair[1];
+            	// If second entry with this name
+            } else if (typeof query_string[pair[0]] === "string") {
+              var arr = [ query_string[pair[0]], pair[1] ];
+              query_string[pair[0]] = arr;
+            	// If third or later entry with this name
+            } else {
+              query_string[pair[0]].push(pair[1]);
+            }
+          } 
+            return query_string;
+        } ();
+        
+        
         $(document).bind('mobileinit',function(){
 			$.mobile.selectmenu.prototype.options.nativeMenu = false;
 		});
@@ -27,8 +53,8 @@ function handleSocialShare()
 {
     $('#select-choice-share option:selected').each(function()
     {
-        text = "Flash vs HTML5 Trendanalyse";
-        url ="http://www.sebastianviereck.de/flash-html5-trendanalyse/#.ULTEkYb9n2A";
+        text = $(".item_name").html();
+        url ="http://bit.ly/hackprezreg";
 
         shareService = $(this).val()
         switch (shareService) {
@@ -59,6 +85,34 @@ function shareEmail(subject, body)
     window.location = "mailto:&subject=" + subject + "&body=" + body;
 }		
 		
+		$(function(){
+		   
+		   var ItemList = Parse.Object.extend("ItemList");
+         var query = new Parse.Query(ItemList);
+         query.get(QueryString.itemid, {
+           success: function(results) {
+             // The object was retrieved successfully.
+             $(".item_name").html(results.get('item_name'));
+             $(".desc").append(results.get('desc'));
+             $(".brand").append(results.get('brand'));
+             $(".model").append(results.get('model'));
+             $(".conditions").append(results.get('conditions'));
+             $(".year").append(results.get('year'));
+             $(".budget").append(results.get('budget'));
+             $(".select_delivery").append(results.get('select_delivery'));
+             $(".state").append(results.get('state'));
+             $(".user_id").append(results.get('user_id'));
+             
+           },
+           error: function(object, error) {
+             // The object was not retrieved successfully.
+             // error is a Parse.Error with an error code and description.
+             alert("Error: " + error.code + " " + error.message);
+           }
+         });
+         
+         
+		});
 		
 		</script>
         
@@ -76,10 +130,18 @@ function shareEmail(subject, body)
  
   <div data-role="content">
 
-    <div id="page_divider">Items Page</div>
-    <hr/>
     
-    
+    <h1 class="item_name">Item name</h1>
+ <hr/>
+     <p class="desc">Description: </p>
+    <p class="brand">Brand: </p>
+    <p class="model">Model: </p>
+    <p class="conditions">Conditions: </p>
+    <p class="year">Year: </p>
+    <p class="budget">Budget: </p>
+    <p class="select_delivery">Preferred delivery: </p>
+    <p class="state">State: </p>
+    <p class="user_id">By: </p>
     
      <label for="select-choice-share">Share</label>
     <select name="select-choice-share" id="select-choice-share" data-icon="forward" data-iconpos="left" onchange="handleSocialShare()">
