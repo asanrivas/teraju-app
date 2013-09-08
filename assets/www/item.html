@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=320; user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <title>Kau Ada?</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="jquery-mobile/kauada.min.css" />
+        
+        
+        
+        <link rel="stylesheet" href="jquery-mobile/jquery.mobile.structure-1.3.1.min.css" />
+        <script src="jquery-mobile/jquery-1.9.1.min.js"></script>
+        <script src="jquery-mobile/jquery.mobile-1.3.1.min.js"></script>
+        <script type="text/javascript" src="js/parse-1.2.10.js"></script>        
+        
+        <script type="text/javascript">
+        $(document).bind('mobileinit',function(){
+			$.mobile.selectmenu.prototype.options.nativeMenu = false;
+		});
+		
+
+function handleSocialShare()
+{
+    $('#select-choice-share option:selected').each(function()
+    {
+        text = "Flash vs HTML5 Trendanalyse";
+        url ="http://www.sebastianviereck.de/flash-html5-trendanalyse/#.ULTEkYb9n2A";
+
+        shareService = $(this).val()
+        switch (shareService) {
+            case "facebook":
+                shareFacebookLike(url);
+                break;
+            case "twitter":
+                shareTwitter(url, text);
+                break;
+            case "email":
+                shareEmail(url, text);
+                break;
+            default:
+
+        }
+    });
+}
+function shareFacebookLike(url)
+{
+    window.location="http://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+}
+function shareTwitter(url, text)
+{
+    window.location = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url);
+}
+function shareEmail(subject, body)
+{
+    window.location = "mailto:&subject=" + subject + "&body=" + body;
+}		
+		
+		
+		</script>
+        
+        
+    </head>
+    <body>
+<!-- PITEM_PAGE -->
+<div data-role="page" id="pitem_page">
+	<div data-role="header" data-id="head">
+    <a data-rel="back" id="hback" class="ui-btn-left" data-theme="f" data-iconpos="notext" data-direction="reverse">Back</a>
+		<h1>Kau Ada</h1>
+    <a href="index.html" rel="external" data-ajax="false" id="hhome" class="ui-btn-right" data-theme="f" data-iconpos="notext">Home</a>    
+	</div><!-- /header -->
+
+ 
+  <div data-role="content">
+
+    <div id="page_divider">Items Page</div>
+    <hr/>
+    
+    
+    
+     <label for="select-choice-share">Share</label>
+    <select name="select-choice-share" id="select-choice-share" data-icon="forward" data-iconpos="left" onchange="handleSocialShare()">
+        <option value="no">Share it</option>
+        <option value="facebook">Post this on Facebook</option>
+        <option value="twitter">Tweet this</option>
+        <option value="email">Email this</option>
+    </select>
+    
+    
+  </div><!-- /content -->
+</div>
+<!-- /PITEM_PAGE -->  
+    </body>
+</html>
