@@ -20,17 +20,7 @@
 
 $(function() {
 	Parse.initialize("l3u5f6gZsv89a09Ie6ZjXqxgz4BNcoH4llwfTkfB", "3yzEpJ2G39tbg1xZPgVxOpPGh36dLPQfG6f1tukP");
-    
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-      testObject.save({foo: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
+
     
     //check if user is loggin in
     
@@ -101,18 +91,6 @@ $(document).bind('mobileinit',function(){
 <!-- /PARSE SDK -->   
     </head>
     <body>
-        <!--div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script-->
-
 <!-- PHOME -->
 <div data-role="page" id="phome">
 	<div data-role="header" data-id="head">
