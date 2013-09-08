@@ -48,35 +48,9 @@ var app = {
     }
 };
 $(function(){
-	var ItemList = Parse.Object.extend("ItemList");
-	var query = new Parse.Query(ItemList);
-	query.limit(10);
-	query.descending("updatedAt");
-	query.find({
-	  success: function(results) {
-	    //alert("Successfully retrieved " + results.length + " scores.");
-	    // Do something with the returned Parse.Object values
-	    for (var i = 0; i < results.length; i++) { 
-	      var object = results[i];
-	     	// alert(object.id + ' - ' + object.get('playerName'));
-	     	var item_name = object.get('item_name');
-	     	var desc = object.get('desc');
-	     	//alert(object.updatedAt);
-	     	var time = moment(object.updatedAt).fromNow();
-         var item = $(".duplicater").clone().attr("class","latest_item").appendTo("#latest_item_list");
-         item.find(".ititle").html(item_name);
-         item.find(".idescription").html(desc);
-         item.find(".itime").html(time);
-         
-         //item.children(".itittle").html();
-	    }
-	    $(".duplicater").hide();
-	  },
-	  error: function(error) {
-	    alert("Error: " + error.code + " " + error.message);
-	  }
-	});
-	
+   readLatestList();
+   //readChannel();
+   
 	$('#submit_item').click(function() {
 		var ItemList = Parse.Object.extend("ItemList");
 		var itemList = new ItemList();
@@ -107,7 +81,7 @@ $(function(){
 		  }
 		});
 		Parse.Push.send({
-		  channels: itemList.get("category"),
+		   channels: [ "cars", "motorcycles", "apartments", "houses"],
 		  data: {
 		    alert: currentUser.get('username')+" is looking for "+itemList.get("item_name")+"."
 		  }
@@ -121,5 +95,67 @@ $(function(){
 		  }
 		});
 	});
-	
+	$('#upload_but').click(function() {
+	   var fileUploadControl = $("#profilePhotoFileUpload")[0];
+      if (fileUploadControl.files.length > 0) {
+        var file = fileUploadControl.files[0];
+        var name = "photo.jpg";
+
+        var parseFile = new Parse.File(name, file);
+      }
+	});
 });
+function readChannel()
+{
+   //var Installation = Parse.Object.extend("Installation");
+	var query = new Parse.Query(Parse.Installation);
+	
+	query.find({
+	  success: function(results) {
+	    alert("Successfully retrieved " + results.length + " scores.");
+	    // Do something with the returned Parse.Object values
+	    for (var i = 0; i < results.length; i++) { 
+	      var object = results[i];
+	     	alert(object.id + ' - ' + object.get('channel'));
+	     
+         //item.children(".itittle").html();
+	    }
+	  },
+	  error: function(error) {
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+}
+
+function readLatestList()
+{
+   var ItemList = Parse.Object.extend("ItemList");
+	var query = new Parse.Query(ItemList);
+	query.limit(10);
+	query.descending("updatedAt");
+	query.find({
+	  success: function(results) {
+	    //alert("Successfully retrieved " + results.length + " scores.");
+	    // Do something with the returned Parse.Object values
+	    for (var i = 0; i < results.length; i++) { 
+	      var object = results[i];
+	     	// alert(object.id + ' - ' + object.get('playerName'));
+	     	var item_name = object.get('item_name');
+	     	var desc = object.get('desc');
+	     	//alert(object.updatedAt);
+	     	var time = moment(object.updatedAt).fromNow();
+         var item = $(".duplicater").clone().attr("class","latest_item").appendTo("#latest_item_list");
+         item.find(".ititle").html(item_name);
+         item.find(".idescription").html(desc);
+         item.find(".itime").html(time);
+         
+         //item.children(".itittle").html();
+	    }
+	    $(".duplicater").hide();
+	  },
+	  error: function(error) {
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+	
+}

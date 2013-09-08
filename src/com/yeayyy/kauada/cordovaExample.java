@@ -45,6 +45,13 @@ public class cordovaExample extends DroidGap
 
         // To track statistics around application opens
         ParseAnalytics.trackAppOpened(getIntent());
+        
+        
+        //subscribe 
+        PushService.subscribe(this, "cars", cordovaExample.class);
+        PushService.subscribe(this, "motorcycles", cordovaExample.class);
+        PushService.subscribe(this, "apartments", cordovaExample.class);
+        PushService.subscribe(this, "houses", cordovaExample.class);
     }
 }
 
