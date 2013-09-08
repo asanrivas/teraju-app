@@ -535,9 +535,19 @@
 	text-align:left;
 	padding-left:21px;
 }
+#bitemfound {
+	background: url(../jquery-mobile/iconsweets/34-listimage.png) 50% 50% no-repeat;
+	background-size:32px 32px;
+	background-position:6px 50%;
+	margin-left:2%;
+	margin-right:2%;
+	width:auto;
+	height:auto;
+	text-align:left;
+	padding-left:21px;
+}
 
-
-#baboutsabah:hover, #btravelidea:hover, #bguide:hover, #bmap:hover, #bdestination:hover, #bhotspot:hover, #bplacedistrict:hover, #bplacetype:hover, #bplace_sport:hover, #bplace_city:hover, #bplace_cultural:hover, #bplace_golf:hover, #bplace_heritage:hover, #bplace_island:hover, #bplace_relax:hover, #bplace_nature:hover, #bplace_park:hover, #bplace_tamu:hover, #bplace_spa:hover, #bplace_wildlife:hover, #bplace_district:hover, #baccomodation:hover, #bhomestay:hover, #bhoteldistrict:hover, #bhoteltype:hover, #bhotel_district:hover, #bhotel_condo:hover, #bhotel_beach:hover, #bhotel_bed:hover, #bhotel_budget:hover, #bhotel_business:hover, #bhotel_island:hover, #bhotel_lodges:hover, #bhomestay_loc:hover, #bsearch2:hover, #button_seller:hover, #bsetting:hover, #blist_item:hover, #badd_item:hover, #bnotification:hover, #bmsg_seller:hover, #button_buyer:hover, #button_latest:hover {
+#baboutsabah:hover, #btravelidea:hover, #bguide:hover, #bmap:hover, #bdestination:hover, #bhotspot:hover, #bplacedistrict:hover, #bplacetype:hover, #bplace_sport:hover, #bplace_city:hover, #bplace_cultural:hover, #bplace_golf:hover, #bplace_heritage:hover, #bplace_island:hover, #bplace_relax:hover, #bplace_nature:hover, #bplace_park:hover, #bplace_tamu:hover, #bplace_spa:hover, #bplace_wildlife:hover, #bplace_district:hover, #baccomodation:hover, #bhomestay:hover, #bhoteldistrict:hover, #bhoteltype:hover, #bhotel_district:hover, #bhotel_condo:hover, #bhotel_beach:hover, #bhotel_bed:hover, #bhotel_budget:hover, #bhotel_business:hover, #bhotel_island:hover, #bhotel_lodges:hover, #bhomestay_loc:hover, #bsearch2:hover, #button_seller:hover, #bsetting:hover, #blist_item:hover, #badd_item:hover, #bnotification:hover, #bmsg_seller:hover, #button_buyer:hover, #button_latest:hover, #bitemfound:hover {
 	background-color:#E3EDBB;
 }
 #dmap {
@@ -577,6 +587,17 @@ a.ui-li-has-count span span.ui-btn-text{ padding-right:0; position:static; }
     font-weight: bold;
     padding: 0.2em 0.5em;
     float: right;
+}
+#preview {
+width: 80%; max-width: 300px;
+}
+#preview img {
+width: 100%;
+}
+.hiddenfile {
+width: 0px;
+height: 0px;
+overflow: hidden;
 }
 
 
