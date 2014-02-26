@@ -2917,9 +2917,9 @@ input[type="button"].btn-block {
   background-color: #24748c \9;
 }
 .btn-inverse {
-  background-color: #343434;
+  background-color: #444444;
   color: #ffffff;
-  *background-color: #343434;
+  *background-color: #444444;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
 }

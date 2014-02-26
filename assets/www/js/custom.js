@@ -281,7 +281,7 @@ $(document).ready(function () {
 
 $("#donutchart1").donutchart({
     'size': 90,
-    'fgColor': '#343434',
+    'fgColor': '#2c2c2c',
     'donutwidth': 6,
     'textsize': 14
 });
@@ -289,7 +289,7 @@ $("#donutchart1").donutchart("animate");
 
 $("#donutchart2").donutchart({
     'size': 90,
-    'fgColor': '#343434',
+    'fgColor': '#2c2c2c',
     'donutwidth': 6,
     'textsize': 14
 });
@@ -297,7 +297,7 @@ $("#donutchart2").donutchart("animate");
 
 $("#donutchart3").donutchart({
     'size': 90,
-    'fgColor': '#343434',
+    'fgColor': '#2c2c2c',
     'donutwidth': 6,
     'textsize': 14
 });
@@ -305,7 +305,7 @@ $("#donutchart3").donutchart("animate");
 
 $("#donutchart4").donutchart({
     'size': 90,
-    'fgColor': '#343434',
+    'fgColor': '#2c2c2c',
     'donutwidth': 6,
     'textsize': 14
 });
@@ -313,7 +313,7 @@ $("#donutchart4").donutchart("animate");
 
 $("#donutchart5").donutchart({
     'size': 90,
-    'fgColor': '#343434',
+    'fgColor': '#2c2c2c',
     'donutwidth': 6,
     'textsize': 14
 });
@@ -321,7 +321,7 @@ $("#donutchart5").donutchart("animate");
 
 $("#donutchart6").donutchart({
     'size': 90,
-    'fgColor': '#343434',
+    'fgColor': '#2c2c2c',
     'donutwidth': 6,
     'textsize': 14
 });

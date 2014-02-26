@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Unit Peneraju Agenda Bumiputera | TERAJU</title>
+        <title>Smarty Mobile Website Template</title>
         <!-- All Stylesheets -->
         <link rel="stylesheet"  href="css/All-Stylesheets.css">
         <!-- Add 2 Home -->
@@ -35,14 +35,13 @@
             </div>
             <!-- header Ends -->
             <div data-role="content">
-                <!-- Slider Starts -->
-                <div class="banner">
-                    <img src="images/rss.png" width="100%">
+                <!-- Welcome Text Starts -->
+                <div class="welcome-text">
+                    <h1><span class="normal">Selamat Datang Ke </span>TERAJU</span></h1>
+                    <p>Maka, berpasak dan bertunjang dengan Majlis Ekonomi Bumiputera ini, kepada orang-orang Melayu dan Bumiputera, usahlah berbimbang-bimbang dan bergundah-gundah, kerana selagi ada bulan dan bintang selagi hayat dikandung badan survival Melayu dan Bumiputera tetap menjadi keutamaan dan pelita perjuangan kita sampai bila-bila.<br/><span class="f_right"><b>YAB Dato’ Sri Mohd Najib Tun Abdul Razak</b></span></p>
                 </div>
-                <!-- Slider Ends -->
-                <h1 class="icon-heading">BLOG</h1>
-                <!--p>Pellentesque habitant morbi tristique senectus et netus et malesuaa fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p-->
-                
+                <!-- Welcome Text Ends -->
+              
                 <!-- RSS FEED Starts -->
                 
                 
@@ -63,20 +62,16 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 <div class="content"><!=content!></div>
 </article>
 </script>
-<!-- Got to the bottom of the source to check the scripts. -->
-                
-                
-                
-                
-                
+<!-- Got to the bottom of the source to check the script
                 <!-- RSS FEED Ends -->
-                
-                
+               
                 <!-- Footer Starts -->
                 <div class="footer">© 2013. All rights reserved.</div>
                 <!-- Footer Ends -->
             </div>
             <!-- /content -->
+            <!-- Left Panel Starts
+                ================================================== -->
             <!-- Left Panel Starts
                 ================================================== -->
             <div data-role="panel" id="left-panel" data-theme="g">
@@ -88,18 +83,16 @@ You can print the entry's properties by writting their name inside <!= !>. -->
                         <li><a href="http://www.youtube.com/user/terajuofficial" target="_blank"><img src="images/icons/social-icons/youtube.png" width="36" height="36"></a></li>
                         <li><a href="http://www.flickr.com/photos/terajuofficial" target="_blank"><img src="images/icons/social-icons/flickr.png" width="36" height="36"></a></li>
                         <li><a href="http://www.teraju.gov.my/feed/rss2/" target="_blank"><img src="images/icons/social-icons/rss.png" width="36" height="36"></a></li>
-
                     </ul>
                 </div>
                 <!-- Social Icons Ends -->
-                <!-- Main Menu Starts -->
+                <!-- Main Menu Starts --> 
                 <div id="accordion">
                     <ul id="items">
                         <li>
-                            <a href="index.html" rel="external"><i class="fa fa-home fa-2x"></i>HOME</a>
+                            <a href="index.html" rel="external" class="activated"><i class="fa fa-home fa-2x"></i>HOME</a>
                         </li>
-                        <li>
-                            <a href="blog.html" rel="external" class="activated"><i class="fa fa-rss fa-2x"></i>Blog</a>
+                        <li> <a href="blog.html" rel="external"><i class="fa fa-rss fa-2x"></i>Blog</a>
                         </li>
                         <li>
                             <a href="facebook.html" rel="external"><i class="fa fa-facebook fa-2x"></i>Facebook</a>
@@ -119,6 +112,7 @@ You can print the entry's properties by writting their name inside <!= !>. -->
                         <li><a href="contact-us.html" rel="external"><i class="fa fa-envelope fa-2x"></i>CONTACT US</a></li>
                     </ul>
                 </div>
+                <!-- Main Menu Ends -->
                 <!-- Main Menu Ends -->
             </div>
             <!-- Left Panel Ends
@@ -145,7 +139,7 @@ You can print the entry's properties by writting their name inside <!= !>. -->
                 </div>
                 <!-- Contact Info Ends -->
                 <!-- Social Icons Starts -->
-                <div class="l-social-icons">
+                <div class="r-social-icons">
                     <ul>
                         <li><a href="http://www.facebook.com/terajuofficialpage" target="_blank"><img src="images/icons/social-icons/fb.png" width="36" height="36"></a></li>
                         <li><a href="http://www.twitter.com/terajuofficial" target="_blank"><img src="images/icons/social-icons/twitter.png" width="36" height="36"></a></li>
@@ -203,10 +197,26 @@ You can print the entry's properties by writting their name inside <!= !>. -->
             ================================================== -->
         <!-- Javascript Files
             ================================================== -->   
+        <!-- LayerSlider stylesheet -->
+        <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+        <!-- External libraries: jQuery & GreenSock -->
+        <!--<script src="layerslider/js/jquery.js" type="text/javascript"></script>-->
+        <script src="layerslider/js/greensock.js" type="text/javascript"></script>
+        <!-- LayerSlider script files -->
+        <script src="layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+        <script src="layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>      
+        <!-- Initializing the slider -->
+        <script>
+            jQuery("#layerslider").layerSlider({
+            	pauseOnHover: false,
+            	autoPlayVideos: false,
+            	skinsPath: 'layerslider/skins/'
+            });
+        </script>
         <script src="owl-carousel/owl-carousel/owl.carousel.js"></script> 
         <!-- Custom JS File -->
         <script src="js/custom.js"></script> 
-        <script src="menu/js/main.js"></script>     
+        <script src="menu/js/main.js"></script>    
         <!-- Twitter -->
         <script src="js/tweets/twitlive-min.js"></script>
         <script>
@@ -224,11 +234,12 @@ You can print the entry's properties by writting their name inside <!= !>. -->
             		$("#tweet_container h1 em").html($("#keyword").val());
             	});
             	
-            	$(".tweets").liveTweets({operator: "#google", liveTweetsToken: "R8l0mjc5sbfmSB1fRdKB15T19mGfI8mpnnfvWipmo"});
+            	$(".tweets").liveTweets({operator: "#google", liveTweetsToken: "815fc7WqduR9I20NR8HsLxvHZIogp3wt62O7tp9Zf40"});
             });
         </script>
         <!-- Retina Display -->
         <script src="js/Retina/retina.js"></script>
+        
         
         
         <!-- Load jQuery Feeds -->
@@ -252,16 +263,17 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 					// Feeds: Set keys and paths of feeds
 					feeds : {
 						blog : 'http://www.teraju.gov.my/feed/rss2/',
-						//facebook : 'http://www.facebook.com/feeds/page.php?format=atom10&id=136257466510729',
-						//twitter : 'http://search.twitter.com/search.rss?q=from:TechCrunch&rpp=100',
-						//twitter : 'https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=techcrunch',
-						//youtube : 'http://www.youtube.com/rss/user/terajuofficial/feed.rss',
+						facebook : 'http://www.facebook.com/feeds/page.php?format=atom10&id=136257466510729',
+						twitter : 'https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=techcrunch',
+						youtube : 'http://www.youtube.com/rss/user/terajuofficial/feed.rss',
+						flickr : 'http://www.flickr.com/services/feeds/photos_public.gne?id=83330234@N03&lang=array[intl_lang]&format=rss_200',
 						//pinterest : 'http://pinterest.com/techcrunch/feed.rss',
+						//instagram : 'http://widget.stagram.com/rss/n/techcrunch',
 						//plus : 'http://gplusrss.com/rss/feed/6f63d587c300e2901659d1c9c4001dc8530d5a449d9f4',
 						//tumblr : 'http://techcrunch.tumblr.com/rss'
 						
 					},
-					max: 20,
+					max: 3,
 					
 					// Preprocess: manipulated entries data before it's rendered
 					preprocess : function(feed) {
@@ -303,5 +315,6 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 				});
 			});
 		</script>
+        
     </body>
 </html>

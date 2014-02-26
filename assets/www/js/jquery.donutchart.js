@@ -1,8 +1,8 @@
 (function($) {
 
   var defaultsettings = {
-    'bgColor' : '#f0f0f0',
-    'fgColor' : '#343434',
+    'bgColor' : '#bbbbbb',
+    'fgColor' : '#2c2c2c',
     'size' : 160,
     'donutwidth': 12,
     'textsize': 16,

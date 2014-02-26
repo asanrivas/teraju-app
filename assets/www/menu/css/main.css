@@ -30,20 +30,22 @@ ul {
 	border-bottom-width: 1px;
 	border-top-style: solid;
 	border-bottom-style: solid;
-	border-top-color: #CCC;
-	border-bottom-color: #999;
-	color: #000!important;
-
+	border-top-color: #222222;
+	border-bottom-color: #525252;
+	color: #ccc!important;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#363636), to(#2c2c2c));
+	background-image: -webkit-linear-gradient(#363636, #2c2c2c);
+	background-image: -moz-linear-gradient(#363636, #2c2c2c);
+	background-image: -ms-linear-gradient(#363636, #2c2c2c);
+	background-image: -o-linear-gradient(#363636, #2c2c2c);
+	background-image: linear-gradient(#363636, #2c2c2c);
 }
-
-#items>li>a>i{
+#items>li>a>i {
 	vertical-align: middle!important;
 	padding-right: 15px;
 	text-align: center!important;
-	width:36px;
-
+	width: 36px;
 }
-
 #items>li>a::after {
 	font-weight: 400;
 	margin-top: 2px;
@@ -54,16 +56,22 @@ ul {
 	content: "\f105"
 }
 #items>li>a:hover, #items>li>a.activated {
-	color: #fff!important;
+	color: #333!important;
 	font-weight: 400;
-	background-color: #555555;
+	background-color: #ffcc00;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcc00), to(#ffcc00));
+	background-image: -webkit-linear-gradient(#ffcc00, #ffcc00);
+	background-image: -moz-linear-gradient(#ffcc00, #ffcc00);
+	background-image: -ms-linear-gradient(#ffcc00, #ffcc00);
+	background-image: -o-linear-gradient(#ffcc00, #ffcc00);
+	background-image: linear-gradient(#ffcc00, #ffcc00);
 	transition: background-color 0.4s ease-in-out;
 	-moz-transition: background-color 0.4s ease-in-out;
 	-webkit-transition: background-color 0.4s ease-in-out;
 	-o-transition: background-color 0.4s ease-in-out
 }
 #items>li>a.activated::after {
-	/*content: "\f106"*/
+/*content: "\f106"*/
 }
 .sub-items {
 	display: none
@@ -89,10 +97,10 @@ ul {
 	font-family: 'Oswald', sans-serif!important;
 	font-weight: 400!important;
 	text-decoration: none;
-	color: #000!important;
+	color: #ccc!important;
 }
 .sub-items>li>a.current {
-	color: #000;
+	color: #fff!important;
 	position: relative;
 	font-weight: 400!important;
 	text-decoration: none;
@@ -102,13 +110,12 @@ ul {
 	font-family: "FontAwesome";
 	/*background-color: #fff;*/
 	position: absolute;
-	color: #000!important;
+	color: #fff!important;
 	font-size: 0.656em;
 	left: -29px;
-	
 }
 .sub-items>li:hover>a {
-	color: #000!important;
+	color: #fff!important;
 	transition: color 0.4s ease-in-out;
 	-moz-transition: color 0.4s ease-in-out;
 	-webkit-transition: color 0.4s ease-in-out;

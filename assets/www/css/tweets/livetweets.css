@@ -27,13 +27,13 @@
 	line-height: 16px;
 }
 .tweet_text a {
-	color: #000;
+	color: #ccc;
 }
 .tweet_text a:hover {
-	color: #B64926;
+	color: #fff;
 }
 .tweet_text a.profile {
-	color: #B64926;
+	color: #ccc;
 	text-decoration: none;
 	font-weight: bold;
 }
