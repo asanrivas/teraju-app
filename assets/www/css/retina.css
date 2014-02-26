@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+h1.icon-heading {
+	background-image: url(../images/icons/arrow-heading-big@2x.png);
+	background-size: 38px 38px;
+}
+#right-panel h1.icon-heading {
+	background-image: url(../images/icons/arrow-heading@2x.png);
+	background-size: 32px 32px;
+}
+
+
+
+
+
+}

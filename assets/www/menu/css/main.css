@@ -1,0 +1,116 @@
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0
+}
+#accordion {
+	/*box-shadow: 0px 4px 10px rgba(50,50,50,0.3);
+	-moz-box-shadow: 0px 4px 10px rgba(50,50,50,0.3);
+	-webkit-box-shadow: 0px 4px 10px rgba(50,50,50,0.3);
+	background-color: #fff;*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+#items {
+	padding: 0
+}
+#items>li>a {
+	text-indent: 10px;
+	/*width: 100%;*/
+	margin: 0 auto;
+	cursor: pointer;
+	line-height: 50px;
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: 'Oswald', sans-serif!important;
+	font-weight: 400;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #CCC;
+	border-bottom-color: #999;
+	color: #000!important;
+
+}
+
+#items>li>a>i{
+	vertical-align: middle!important;
+	padding-right: 15px;
+	text-align: center!important;
+	width:36px;
+
+}
+
+#items>li>a::after {
+	font-weight: 400;
+	margin-top: 2px;
+	content: "\f106";
+	font-family: "FontAwesome";
+	position: absolute;
+	right: 30px;
+	content: "\f105"
+}
+#items>li>a:hover, #items>li>a.activated {
+	color: #fff!important;
+	font-weight: 400;
+	background-color: #555555;
+	transition: background-color 0.4s ease-in-out;
+	-moz-transition: background-color 0.4s ease-in-out;
+	-webkit-transition: background-color 0.4s ease-in-out;
+	-o-transition: background-color 0.4s ease-in-out
+}
+#items>li>a.activated::after {
+	/*content: "\f106"*/
+}
+.sub-items {
+	display: none
+}
+.sub-items>li:first-child>a {
+	margin-top: 8px;
+	height: 34px;
+}
+.sub-items>li:last-child>a {
+	margin-bottom: 12px;
+	height: 34px;
+}
+.sub-items>li>a {
+	margin: 0 auto;
+	/*width: 212px;*/
+	line-height: 39px;
+	text-indent: 54px;
+	height: 34px;
+	position: relative;
+	display: block;
+	/*border-left: 2px solid rgba(57,198,233,0.3);*/
+	font-size: 14px;
+	font-family: 'Oswald', sans-serif!important;
+	font-weight: 400!important;
+	text-decoration: none;
+	color: #000!important;
+}
+.sub-items>li>a.current {
+	color: #000;
+	position: relative;
+	font-weight: 400!important;
+	text-decoration: none;
+}
+.sub-items>li>a.current::before {
+	content: "\f00c";
+	font-family: "FontAwesome";
+	/*background-color: #fff;*/
+	position: absolute;
+	color: #000!important;
+	font-size: 0.656em;
+	left: -29px;
+	
+}
+.sub-items>li:hover>a {
+	color: #000!important;
+	transition: color 0.4s ease-in-out;
+	-moz-transition: color 0.4s ease-in-out;
+	-webkit-transition: color 0.4s ease-in-out;
+	-o-transition: color 0.4s ease-in-out
+}

@@ -1,0 +1,68 @@
+/* 
+	Important styles - (used by this app) 
+*/
+
+.tweet {
+	overflow: hidden;
+	clear: both;
+	text-align: left;
+	margin-bottom: 16px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-left: 8px;
+	margin-right: 8px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+}
+.tweet.first {
+	border: none;
+	margin-bottom: 0px;
+}
+.tweet_foto {
+	float: left;
+	margin-right: 8px;
+}
+.tweet_text {
+	font-size: 12px;
+	line-height: 16px;
+}
+.tweet_text a {
+	color: #000;
+}
+.tweet_text a:hover {
+	color: #B64926;
+}
+.tweet_text a.profile {
+	color: #B64926;
+	text-decoration: none;
+	font-weight: bold;
+}
+.tweet_text span {
+	display: block;
+	color: #ccc;
+}
+/* 
+	General styling 
+*/
+
+
+#container {
+	margin: auto;
+	text-align: left;
+	overflow: hidden;
+	position: relative;
+}
+#tweet_container {
+	padding-top:10px;
+	margin: auto;
+	text-align: left;
+	height: 375px;
+	overflow: hidden;
+	font-weight: normal;
+}
+.holder {
+	padding-top: 8px;
+	border-top: none;
+	max-height: 350px;
+	padding-bottom: 8px;
+}

@@ -21,10 +21,6 @@ package com.yeayyy.terajuapp;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
-import com.parse.ParseInstallation;
-import com.parse.PushService;
 
 public class cordovaExample extends DroidGap
 {
@@ -33,18 +29,10 @@ public class cordovaExample extends DroidGap
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html")
-        
-        //
-        Parse.initialize(this, "l3u5f6gZsv89a09Ie6ZjXqxgz4BNcoH4llwfTkfB", "XTJFNCa19l2hBoWbKQeDWCZfUpybfsfeXmwGUZue");
-        
-        PushService.setDefaultPushCallback(this, cordovaExample.class);
-        ParseInstallation.getCurrentInstallation().saveInBackground();
-        
+        super.setIntegerProperty("loadUrlTimeoutValue", 120000); 
+        //super.loadUrl(Config.getStartUrl());
+        super.loadUrl("file:///android_asset/www/index.html");
 
-        // To track statistics around application opens
-        ParseAnalytics.trackAppOpened(getIntent());
     }
 }
 

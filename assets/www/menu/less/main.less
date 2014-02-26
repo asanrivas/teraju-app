@@ -1,0 +1,42 @@
+/*
+ * Developed by Alireza Eskandarpour Shoferi (@cyletech)
+ * http://about.me/cyletech
+ *
+ * (c) 2013 Alireza Eskandarpour Shoferi
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ */
+@color: rgb(142,232,241);
+#items > li > a:hover, #items > li > a.expanded {
+    background-color: @color;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: background-color .4s ease-in-out;
+    -moz-transition: background-color .4s ease-in-out;
+    -o-transition: background-color .4s ease-in-out;
+    transition: background-color .4s ease-in-out;
+}
+
+.sub-items a.current {
+    position: relative;
+    color: @color;
+    font-weight: 600;
+}
+
+.sub-items a.current::before {
+    position: absolute;
+    left: -29px;
+    background-color: #fff;
+    color: @color;
+    content: "\e800";
+    font-size: 0.656em;
+    font-family: "fontello";
+}
+
+.sub-items > li:hover > a {
+    color: @color;
+    -webkit-transition: color 0.4s ease-in-out;
+    -moz-transition: color 0.4s ease-in-out;
+    -o-transition: color 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out;
+}
