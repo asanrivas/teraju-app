@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.yeayyy.kauada;
+package com.yeayyy.terajuapp;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
