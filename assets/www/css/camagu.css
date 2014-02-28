@@ -14,14 +14,7 @@
 
 /* ==========================================================================
    HTML5 display definitions
-   ========================================================================== */
-   
-.feeds-entry-title {
-	font-size:14px;
-	text-decoration: none;
-	color: #343434;
-	font-weight:bold;
-	}	   
+   ========================================================================== */ 
 
 article,
 aside,
@@ -215,7 +208,7 @@ pre {
 
 code {
 	background-color: #F1F2F3;
-	border: 1px solid #282828;
+	border: 1px solid #A7A9AC;
 	border-radius: 2px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -406,7 +399,6 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-	border-color:#282828;
 }
 
 /* ==========================================================================
@@ -553,7 +545,7 @@ table {
    -------------------------------------------------------------------------- */
   
 .page > .footer {
-	border-top: #282828 solid 1px;
+	border-top: #F1F2F3 solid 1px;
 	color: #666;
 	font-size: 0.625em;
 	line-height: 1.2em;
@@ -599,7 +591,7 @@ table {
 	column-width: 359px;
 	-moz-column-width: 359px;
 	-webkit-column-width: 359px;
-	font-size: 0.75em;
+	/*font-size: 0.75em;*/
 	line-height: 1.5em;
 }
 
@@ -617,8 +609,8 @@ table {
    -------------------------------------------------------------------------- */
   
 .feed > .entry {
-	border-top: 1px solid #282828;
-	border-down: 1px solid #282828;
+	border-top: 1px solid #ccc;
+	border-down: 1px solid #ccc;
 	/*
 	border-radius: 2em;
 	box-sizing: border-box;
@@ -646,7 +638,8 @@ table {
 }
 
 .feed > .entry .author {
-	font-weight: 600;
+	/*font-weight: 600;*/
+	font-weight:normal;
 	margin-bottom: 0.75em;
 }
 
@@ -703,14 +696,67 @@ table {
 .feed > .instagram.entry .link {
 	background-position: -120px 0px;
 }
-
 .feed > .flickr.entry .link {
 	background-position: -120px -20px;
 }
 
+.feed {
+	font-size:14px;
+}
+article img {
+	/*
+	width: 359px;
+ 	height: auto;*/
+}
 
+.feeds-entry-title {
+	font-size:14px;
+	text-decoration: none;
+	color: #343434;
+	font-weight:bold;
+}	  
 
+/* ======================= */
+/*
+article.youtube > div > div:nth-child(1) {
+	display: none;
+}
 
+article.youtube > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > div:nth-child(1) {
+display: none;
+}
+article.youtube > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3) {
+display: none;
+}
+article.youtube > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2) {
+display: none;
+}
+*/
+
+article.instagram > div > p:nth-child(1) > a:nth-child(1) {
+display: none;
+}
+article.instagram > div > p:nth-child(3) {
+display: none;
+}
+article.instagram > div > p:nth-child(4) {
+display: none;
+}
+article.instagram > div > p:nth-child(6) {
+display: none;
+}
+article.instagram > div > p:nth-child(5) > img {
+display: none;
+}
+/*
+article.pinterest > div > p:nth-child(1) {
+display: none;
+}
+
+article.pinterest > div > p:nth-child(2) {
+display: none;
+}
+*/
 
 /* ==========================================================================
    Pygments' code highlighting - http://pygments.org/
@@ -810,9 +856,12 @@ table {
 
 @media screen and (max-width: 493px) {
 	body {
-		font-size: 0.75em;
+		font-size:14px; /* 0.75em*/
 	}
-	
+	.feed {
+		font-size:14px; /* 0.75em*/
+	}
+
 	pre {
 		font-size: 1em;
 	}

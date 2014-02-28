@@ -287,6 +287,31 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 						// Inside the callback 'this' corresponds to the feeds' container.
 						$(this).find('a').attr('target', '_blank');
 						
+						//youtube no. of article
+						var artno = $("article.youtube").length;
+
+						for ( var i = 1; i <= artno; i++ ) {
+							//youtube url
+							var yurl = $('article.youtube:nth-child('+i+') > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1) > div > a').attr('href');
+							
+							//change image default.jpg -> mqdefault.jpg
+							var imgurl = $('article.youtube:nth-child('+i+') > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1) > div > a > img').attr('src'); 
+							imgurl = imgurl.replace("default", "mqdefault");
+							
+							//desc
+							var ydesc = $('article.youtube:nth-child('+i+') > div > div:nth-child(1) > table > tbody > tr:nth-child(1) > td:nth-child(2) > div:nth-child(2) > span').html();
+							
+							//video duration
+							var ytime = $('article.youtube:nth-child('+i+') > div > div:nth-child(1) > table > tbody > tr:nth-child(2) > td:nth-child(1)').html();
+							
+							//append
+							$('article.youtube:nth-child('+i+') > div').append('<div style="border:1px solid #999999;background-color:#000;"><center><a href="'+yurl+'" target="_blank"><img alt="" src="'+imgurl+'"></a></center></div><div style=text-align:right;>'+ytime+'</div><div>'+ydesc+'</div>');
+						}
+						
+						//remove old format
+						$('article.youtube > div > div:nth-child(1)').remove();
+						
+						
 						// Pure CSS Masonry fallback for IE
 						if ($.browser.msie && parseInt($.browser.version.substr(0, 1)) < 10) {
 							$('.feed').masonry({

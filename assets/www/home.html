@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Smarty Mobile Website Template</title>
+        <title>TERAJU</title>
         <!-- All Stylesheets -->
         <link rel="stylesheet"  href="css/All-Stylesheets.css">
         <!-- Add 2 Home -->
@@ -62,6 +62,33 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 <div class="content"><!=content!></div>
 </article>
 </script>
+
+<!-- entryTwitter -->
+<script type="text/html" id="entryTwitter">
+<article class="<!=source!> entry">
+<p>
+<a class="f_left heading" target="_blank" href="<!=link!>" title="<!=title!>"><h2>Tweet @TechCrunch</h2></a><br/><br/>
+<a class="link" href="<!=feedLink!>" title="<!=feedDescription!>"><!=feedTitle!></a>						
+<! if (publishedDate) { !><span class="publishedDate"><!=publishedDate!></span><! } !>
+<! if (author) { !><span class="author"> | <!=author!></span><! } !>
+</p>
+<div class="content"><!=content!></div>
+</article>
+</script>
+<!-- /entryTwitter -->
+
+<!-- entryInstagram -->
+<script type="text/html" id="entryInstagram">
+<article class="<!=source!> entry">
+<p>
+<a class="f_left heading" target="_blank" href="<!=link!>" title="<!=title!>"><h2><!=title!></h2></a><br/><br/>
+<a class="link" href="<!=feedLink!>" title="<!=feedDescription!>"><!=feedTitle!></a>						
+<! if (publishedDate) { !><span class="publishedDate"><!=publishedDate!></span><! } !>
+</p>
+<div class="content"><!=content!></div>
+</article>
+</script>
+<!-- /entryInstagram -->
 <!-- Got to the bottom of the source to check the script
                 <!-- RSS FEED Ends -->
                
@@ -289,7 +316,19 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 					
 					// entryTemplate: template used to render entries. Can be a string, an id or a callback.
 					// Using the id of the template defined in the markup.
-					entryTemplate : 'entryTmpl',
+					//entryTemplate : 'entryTmpl',
+					entryTemplate: function(entry) {
+						var template = '';
+				
+						if (entry.source == 'twitter') {
+							// Just the content for twitter entries
+							template =  'entryTwitter';
+						}
+						else {template = 'entryTmpl'}
+				
+						// Render the template
+						return this.tmpl(template, entry);
+					},
 					
 					// loadingTemplate: template used to show while entries are being retrieved. Can be a string, an id or a callback.
 					loadingTemplate: '<p class="loading entry">Loading entries, hold on.</p>',
@@ -299,6 +338,38 @@ You can print the entry's properties by writting their name inside <!= !>. -->
 						// Setting all links as external.
 						// Inside the callback 'this' corresponds to the feeds' container.
 						$(this).find('a').attr('target', '_blank');
+						
+						//no. of article
+						var artno = $("article").length;
+				
+						//for youtube
+						for ( var i = 1; i <= artno; i++ ) {
+							//youtube url
+							var yurl = $('article.youtube:nth-child('+i+') > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1) > div > a').attr('href');
+							//alert(yurl);
+							
+							//change image default.jpg -> mqdefault.jpg
+							var imgurl = $('article.youtube:nth-child('+i+') > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1) > div > a > img').attr('src'); 
+							//filter undefined value before performed replace f(x)
+							if(typeof imgurl != 'undefined')
+							{
+								imgurl = imgurl.replace("default", "mqdefault");
+							}
+							
+							//desc
+							var ydesc = $('article.youtube:nth-child('+i+') > div > div:nth-child(1) > table > tbody > tr:nth-child(1) > td:nth-child(2) > div:nth-child(2) > span').html();
+							
+							//video duration
+							var ytime = $('article.youtube:nth-child('+i+') > div > div:nth-child(1) > table > tbody > tr:nth-child(2) > td:nth-child(1)').html();
+							
+							//append
+							$('article.youtube:nth-child('+i+') > div').append('<div style="border:1px solid #999999;background-color:#000;"><center><a href="'+yurl+'" target="_blank"><img alt="" src="'+imgurl+'"></a></center></div><div style=text-align:right;>'+ytime+'</div><div style="font-size:12px;">'+ydesc+'</div>');
+
+						}
+						
+						//remove old format
+						$('article.youtube > div > div:nth-child(1)').remove();
+						$('article.pinterest > div > p:nth-child(1)').remove(); 
 						
 						// Pure CSS Masonry fallback for IE
 						if ($.browser.msie && parseInt($.browser.version.substr(0, 1)) < 10) {
